@@ -1,0 +1,32 @@
+
+<!-- Login page for Supradmin -->
+<mat-card-content fxLayout="row" fxLayoutAlign="center">
+  <mat-card class="cardLogin">
+    <mat-toolbar class="loginToolbar" fxLayoutAlign="center">
+      <div>
+        <h2 class="loginHeader"><span>Tenent Login</span></h2>
+      </div>
+    </mat-toolbar>
+    <mat-card-content>
+      <form class="example-container" #signupForm="ngForm" (ngSubmit)="login(signupForm.value)">
+        <!-- <label for="email">Username</label> -->
+        <mat-form-field>
+          <input matInput type="username" placeholder="Email Address" name="username" id="username"   ngModel required>
+          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+        <!-- <label for="email">Password</label> -->
+        <mat-form-field>
+          <input matInput type="password" placeholder="password" name="password" id="password" ngModel>
+        </mat-form-field>
+        <mat-grid-list cols="3" rowHeight="40px">
+          <mat-grid-tile></mat-grid-tile>
+          <mat-grid-tile fxLayoutAlign="center center">
+            <button mat-raised-button color="primary" class="save_button">LOGIN</button>
+          </mat-grid-tile>
+          <mat-grid-tile>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</mat-card-content>

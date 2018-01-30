@@ -1,0 +1,40 @@
+.example-card {
+  width: 100%;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card {
+  width: 33%;
+  margin-top: -100px;
+}
+
+mat-card-actions {
+  margin-left: 0px;
+}
+
+.grid1 {
+  height: 0px;
+}
+
+.mat-grid-tile {
+  overflow: visible;
+}
+
+.item {
+  background-color: gray;
+}
+.cardLogin{
+  width:400px !important;
+  margin-top:100px !important;
+}
+.loginToolbar{
+  margin-top:-10px;
+  background-color:white;
+}
+.loginHeader{
+  font-size: x-large;
+}

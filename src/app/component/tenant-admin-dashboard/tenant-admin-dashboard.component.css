@@ -1,0 +1,32 @@
+/*cards height width*/
+.example-card {
+  width: 400px;
+  height: 110px;
+  border:1px solid 	#A9A9A9;
+}
+
+.example-card1 {
+  width: 400px;
+  height: 10px;
+  border:1px solid 	#A9A9A9;
+
+}
+
+/*ceter align to the card data*/
+.active,.inactive,.summery{
+  text-align: center;
+}
+
+/*change the button property*/
+.mat-mini-fab:not([class*=mat-elevation-z]){
+  background-color: white;
+}
+
+/*for center align to the card*/
+.summery_card{
+margin-top:100px;
+}
+.detail_card{
+  margin-top:20px;
+
+}

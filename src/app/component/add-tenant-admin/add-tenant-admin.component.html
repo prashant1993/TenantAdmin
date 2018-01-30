@@ -1,0 +1,73 @@
+<!-- <form   #signupForm="ngForm" >
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput type="text" placeholder="Email Address" name="emailAddress" id="emailAddress"   ngModel required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="full name" name="fullName" id="fullName"   ngModel required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="mobile no" name="mobileNo" id="mobileNo"   ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select" name="role" ngModel required>
+        <mat-option value="HR ADMIN">HR ADMIN</mat-option>
+          <mat-option value="HR USER">HR USER</mat-option>
+      </mat-select>
+      <button type="button" class="button" name="button" (click)="login(signupForm.value)">submit</button>
+    </mat-form-field>
+  </div>
+</form> -->
+
+
+<table >
+    <thead>
+        <tr>
+            <th>Email Address</th>
+            <th>Full Name</th>
+            <th>Mobile No</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field of fieldArray; let i = index">
+            <td>
+                <input [(ngModel)]="field.emailAdress" class="form-control" type="text" name="{{field.emailAdress}}" />
+            </td>
+            <td>
+                <input [(ngModel)]="field.fullName" class="form-control" type="text" name="{{field.fullName}}" />
+            </td>
+            <td>
+                <input [(ngModel)]="field.mobileNo" class="form-control" type="text" name="{{field.mobileNo}}" />
+            </td>
+            <td>
+              <select name="role" [(ngModel)]="field.role">
+                <option value="HR ADMIN">HR ADMIN</option>
+                <option value="HR USER">HR USER</option>
+              </select>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.emailAdress" name="newAttributeemailAdress" />
+            </td>
+            <td>
+                <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.fullName" name="newAttributefullName" />
+            </td>
+            <td>
+                <input class="form-control" type="text" id="newAttributePrice" [(ngModel)]="newAttribute.mobileNo" name="newAttributemobileNo" />
+            </td>
+            <td>
+              <select name="role" [(ngModel)]="newAttribute.role">
+                <option value="HR ADMIN">HR ADMIN</option>
+                <option value="HR USER">HR USER</option>
+              </select>
+            </td>
+        </tr>
+        <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+          <button class="btn btn-default" type="button" (click)="getFormValue(fieldArray)">SAVE</button>
+    </tbody>
+</table>

@@ -1,0 +1,77 @@
+<mat-toolbar color="primary" layout="row">
+  <button mat-icon-button class="menu-icon">
+       <mat-icon (click)="sidenav.toggle()" class="mat-24" aria-label="Menu">menu</mat-icon>
+   </button>
+  <span>
+       <h2>HOME</h2>
+   </span>
+  <span class="toolbar-spacer"></span>
+  <mat-icon class="example-icon" (click)="logout()">exit_to_app</mat-icon>
+</mat-toolbar>
+
+<!-- <mat-sidenav-container fullscreen >
+   <mat-sidenav #sidenav mode="side" class="sidenav">
+     <h4 class="subheader">Menu</h4>
+   </mat-sidenav>
+   <div class="content">
+     <div></div>
+     <router-outlet></router-outlet>
+
+   </div>
+</mat-sidenav-container> -->
+
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav>
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+    <mat-list role="list">
+      <a  routerLink="/TenantAdminDashboard">
+      <mat-list-item role="listitem">
+          <mat-icon class="example-icon">home</mat-icon> <span>Home</span>
+      </mat-list-item>
+    </a>
+      <mat-divider></mat-divider>
+      <a href="#" routerLink="/AddTenantAdmin">
+        <mat-list-item role="listitem">
+          <mat-icon class="example-icon">group</mat-icon><span>Create Admin</span>
+        </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+      <a  routerLink="/AdminUser/:label">
+      <mat-list-item role="listitem">
+          <mat-icon class="example-icon">insert_invitation</mat-icon><span>View / Edit Admin</span>
+      </mat-list-item>
+    </a>
+      <mat-divider></mat-divider>
+    </mat-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p> -->
+    <p>
+      <router-outlet></router-outlet>
+    </p>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- <mat-sidenav-container fullscreen   >
+   <mat-sidenav #sidenav >
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+     <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+
+<!-- <mat-toolbar color="primary">
+<mat-toolbar-row>
+  <span >Home</span>
+  <span class="example-spacer"></span>
+  <mat-icon class="example-icon" (click)="logout()">exit_to_app</mat-icon>
+</mat-toolbar-row>
+</mat-toolbar> -->
+
+<!-- <app-sidenavbar>Loading...</app-sidenavbar> -->

@@ -1,0 +1,33 @@
+<div class="summery_card" fxLayoutAlign="center"   fxLayoutGap="10px" >
+<mat-card  class="example-card1" >
+<mat-card-content>
+  <div class="summery">
+    SUMMERY
+  </div>
+</mat-card-content>
+</mat-card>
+</div>
+
+<div class="detail_card" fxLayoutAlign="center">
+<mat-card class="example-card" >
+  <mat-card-content>
+    <div class="container" fxLayout="row"
+    fxLayout.xs="row"
+    fxLayoutAlign="center"
+    fxLayoutGap="0px"
+    fxLayoutGap.xs="5px">
+
+<div class="" fxFlex="40%"  *ngFor="let data of dashDataFirst"  >
+    <div class="active" >
+      <p >{{data.value}}</p>
+      <p (click)="getLabel(data.label)">{{data.label}}</p>
+    </div>
+  </div>
+
+  </div>
+  <mat-card-actions   fxLayoutAlign="end end">
+   <button mat-mini-fab routerLink="/AddTenantAdmin"><b>+</b></button>
+  </mat-card-actions>
+  </mat-card-content>
+</mat-card>
+</div>

@@ -1,0 +1,27 @@
+
+<!-- <mat-table #table [dataSource]="dataSource">
+    <ng-container cdkColumnDef="emailAdress">
+      <mat-header-cell *cdkHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *cdkCellDef="let myData"> <b>{{data.emailAdress}}.</b>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *cdkRowDef="let data; columns: displayedColumns;"></mat-row>
+</mat-table>  -->
+
+<table >
+  <tr>
+    <th>Email Address</th>
+    <th>Role</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let data of myData;let i = index" >
+    <td>{{data.emailAddress}}</td>
+    <td>{{data.role}}</td>
+    <td>
+      <button mat-button  (click)="postStatus(data.emailAddress , data.status)">{{data.status == "INACTIVE" ? "ACTIVATE":"DEACTIVATE"}}</button>
+      <button mat-button >Reset Password</button>
+    </td>
+  </tr>
+</table>
