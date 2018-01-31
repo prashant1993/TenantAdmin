@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewContainerRef } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { DataService} from '../../services/data.service';
 import { Http ,Response} from '@angular/http';
 import { Router } from '@angular/router';
-
-
+ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,11 +11,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public dataservice:DataService,public router:Router) { }
-
-  ngOnInit() {
+  constructor(public toastr: ToastsManager, vcr: ViewContainerRef,public dataservice:DataService,public router:Router) {
+    this.toastr.setRootViewContainerRef(vcr);
   }
 
+
+    ngOnInit() {
+    }
+
+        showSuccess() {
+          this.toastr.success('Login Successfully!');
+        }
+
+        showError(message) {
+          console.log()
+          this.toastr.error(message);
+        }
 //get form data into ts
   login(value){
     console.log(value);
@@ -30,10 +40,23 @@ export class LoginComponent implements OnInit {
        .subscribe(
          data =>
          {
-           // console.log(data);
-           this.router.navigate(['/TenantAdminDashboard'])
+           this.showSuccess();
+           setTimeout (() => {
+             this.router.navigate(['/TenantAdminDashboard']);
+           }, 2000)
          },
-            error => console.log('error get occurred!')
+            error => {
+
+              console.log('error get occurred!',error._body,error)
+              // var json = JSON.stringify(eval("(" + error._body + ")"));
+              // console.log(json);
+              this.showError(error._body);
+            }
        );
 }
+
+
+
+
+
 }

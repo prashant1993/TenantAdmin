@@ -34,7 +34,7 @@
     <tbody>
         <tr *ngFor="let field of fieldArray; let i = index">
             <td>
-                <input [(ngModel)]="field.emailAdress" class="form-control" type="text" name="{{field.emailAdress}}" />
+                <input [(ngModel)]="field.emailAddress" class="form-control" type="text" name="{{field.emailAddress}}" />
             </td>
             <td>
                 <input [(ngModel)]="field.fullName" class="form-control" type="text" name="{{field.fullName}}" />
@@ -43,7 +43,7 @@
                 <input [(ngModel)]="field.mobileNo" class="form-control" type="text" name="{{field.mobileNo}}" />
             </td>
             <td>
-              <select name="role" [(ngModel)]="field.role">
+              <select name="role" ngFor="let role of roles" [(ngModel)]="field.role">
                 <option value="HR ADMIN">HR ADMIN</option>
                 <option value="HR USER">HR USER</option>
               </select>
@@ -52,7 +52,7 @@
         </tr>
         <tr>
             <td>
-                <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.emailAdress" name="newAttributeemailAdress" />
+                <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.emailAddress" name="newAttributeemailAddress" />
             </td>
             <td>
                 <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.fullName" name="newAttributefullName" />
@@ -71,3 +71,27 @@
           <button class="btn btn-default" type="button" (click)="getFormValue(fieldArray)">SAVE</button>
     </tbody>
 </table>
+
+
+<!-- <form   #signupForm="ngForm" >
+<table>
+  <thead>
+      <tr>
+          <th>Email Address</th>
+          <th>Full Name</th>
+          <th>Mobile No</th>
+          <th>Role</th>
+      </tr>
+  </thead>
+ <tbody>
+   <tr *ngFor="let rowContent of rows">
+      <td><mat-form-field><input matInput  type ="text" name="emailAddress" ></mat-form-field></td>
+      <td><mat-form-field> <input  matInput type ="text" name="fullName" ></mat-form-field></td>
+      <td><mat-form-field> <input  matInput type ="text" name="mobileNo" ></mat-form-field></td>
+      <td><mat-form-field> <input  matInput type ="text" name="role" ></mat-form-field></td>
+   </tr>
+ </tbody>
+</table>
+<button class="button" (click)="addRow()">Add Row</button>
+<button class="button" (click)="data(signupForm)">SAVE</button>
+</form> -->

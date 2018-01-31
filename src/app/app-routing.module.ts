@@ -13,7 +13,7 @@ const routes: Routes = [
 {path:"Login",component:LoginComponent},
 {path:"TenantAdminDashboard",component:TenantAdminDashboardComponent,canActivate: [AuthGuardService]},
 {path:"AdminUser/:label",component:AdminUserComponent,canActivate: [AuthGuardService]},
-{path:"AddTenantAdmin",component:AddTenantAdminComponent,canActivate: [AuthGuardService]}
+{path:"AddTenantAdmin",component:AddTenantAdminComponent}
 ];
 
 @NgModule({

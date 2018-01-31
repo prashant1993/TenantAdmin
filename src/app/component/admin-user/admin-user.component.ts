@@ -36,15 +36,16 @@ export class AdminUserComponent implements OnInit {
   constructor(public dataservice: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log("initialize function");
     this.route.params.subscribe(params => {
       this.label = params['label'];
       console.log(this.label);
+      this.getAdminlistAll(this.label);
     });
-    console.log("label", this.label);
-    this.getAdminlistAll(this.label);
   }
 
   getAdminlistAll(label) {
+    console.log("function calling");
     console.log("label", label);
     this.dataservice.getData('tenantAdmin/readAdminList/' + label).subscribe(Response =>
       {

@@ -17,9 +17,10 @@ import { MatTableModule } from '@angular/material/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { routingComponents } from './app-routing.module';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import { DataService } from './services/data.service';
 import { AuthGuardService } from './services/auth-guard.service';
-
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -48,8 +49,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     MatSlideToggleModule,
     HttpModule,
     MatRadioModule,
-    MatDividerModule
-    // DataSource
+    MatDividerModule,
+   ToastModule.forRoot()
   ],
   providers: [DataService,AuthGuardService],
   bootstrap: [AppComponent]

@@ -16,7 +16,6 @@ export class TenantAdminDashboardComponent implements OnInit {
   constructor(public dataservice: DataService, public http: Http, public router: Router) { }
 
   ngOnInit() {
-    console.log("initialization");
     ////////////////////////////////read the tetant data by calling service method//////////////////////////////////////////////
     this.dataservice.getData('tenantAdmin/readDashboard').subscribe(response => {
       if (response.status) {
@@ -27,22 +26,10 @@ export class TenantAdminDashboardComponent implements OnInit {
       error => console.log("Error while retrieving"))
   }
 
-////////////////////////////////read the perticular category user detail//////////////////////////////////////////
-  getAdminlistAll(label) {
-    return this.dataservice.getData('tenantAdmin/readAdminList/' + label).subscribe(Response =>
-    {
-      console.log('data got', Response.data);
-      // localStorage.setItem("hr admin", Response.data);
-      return Response.data;
-    },
-      error => console.log('error get occurred!', error)
-    );
-  }
-
+////////////////////////////////////////////////////////////////////////////////////
   //get label grom html and pass to (getAdminlistAll()) service for post call
     getLabel(label) {
     console.log("label", label);
-    this.getAdminlistAll(label);
     this.router.navigate(['/AdminUser', label]);
   }
 }

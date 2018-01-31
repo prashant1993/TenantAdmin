@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" layout="row">
   <button mat-icon-button class="menu-icon">
-       <mat-icon (click)="sidenav.toggle()" class="mat-24" aria-label="Menu">menu</mat-icon>
+       <!-- <mat-icon (click)="sidenav.toggle()" class="mat-24" aria-label="Menu">menu</mat-icon> -->
    </button>
   <span>
        <h2>HOME</h2>
@@ -20,7 +20,7 @@
    </div>
 </mat-sidenav-container> -->
 
-<mat-sidenav-container fullscreen>
+<!-- <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav>
     <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
     <mat-list role="list">
@@ -36,7 +36,7 @@
         </mat-list-item>
       </a>
       <mat-divider></mat-divider>
-      <a  routerLink="/AdminUser/:label">
+      <a  (click)="getLabel()">
       <mat-list-item role="listitem">
           <mat-icon class="example-icon">insert_invitation</mat-icon><span>View / Edit Admin</span>
       </mat-list-item>
@@ -47,12 +47,13 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <!-- <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p> -->
     <p>
       <router-outlet></router-outlet>
     </p>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+
 <!-- <mat-sidenav-container fullscreen   >
    <mat-sidenav #sidenav >
     <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
@@ -75,3 +76,4 @@
 </mat-toolbar> -->
 
 <!-- <app-sidenavbar>Loading...</app-sidenavbar> -->
+  <router-outlet></router-outlet>

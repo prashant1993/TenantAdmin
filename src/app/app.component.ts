@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
 import { DataService} from './services/data.service';
 import { Router } from '@angular/router';
 import {FormControl} from '@angular/forms';
@@ -17,6 +17,12 @@ export class AppComponent {
   console.log("function get called");
   this.dataservice.logout();
   this.router.navigate(['/Login']);
+  }
+
+
+  //get label grom html and pass to (getAdminlistAll()) service for post call
+    getLabel() {
+    this.router.navigate(['/AdminUser/all']);
   }
 
 
